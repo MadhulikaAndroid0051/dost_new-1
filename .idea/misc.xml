@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/aadhar_back.xml" value="0.24791666666666667" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/aadhar_front.xml" value="0.24791666666666667" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/action_bar.xml" value="0.24791666666666667" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/activate_buy_card.xml" value="0.24791666666666667" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/activity_kyc_upload.xml" value="0.24791666666666667" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/adapter_business_profile.xml" value="0.33" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/adapter_nfc_profile.xml" value="0.18229166666666666" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/bottom_navigation.xml" value="0.23229166666666667" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/dialog_edit_profile.xml" value="0.25" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/digital_bussinos_card_activity.xml" value="0.23229166666666667" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/edit_profile.xml" value="0.23229166666666667" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/edit_profile_nfc.xml" value="0.2" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/fragment_my_nfc.xml" value="0.23229166666666667" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/health_id.xml" value="0.22" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/login_activity.xml" value="0.18" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/new_main_activity.xml" value="0.23229166666666667" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/set_action.xml" value="0.19264069264069264" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/set_nfc_profile.xml" value="0.19166666666666668" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    >
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fillViewport="true"
+        android:overScrollMode="always"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/linear_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view1"
+                    style="@style/Base.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_margin="10dp"
+                    android:padding="4dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp"
+                    app:cardBackgroundColor="@color/lght_grey"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="32dp"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:weightSum="3"
+                        android:padding="4dp"
+                        app:layout_constraintTop_toBottomOf="@+id/card_view"
+                        android:layout_height="match_parent"
+                        >
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_gear"
+                            android:layout_marginStart="32dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Set Action"
+                            android:layout_weight="2"
+                            android:textSize="16dp"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+    <!--Base CardView-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/base_cardview"
+        style="@style/Base.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="4dp"
+
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#000"
+
+        app:layout_constraintEnd_toEndOf="parent"
+          android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_view1"
+     >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/tv_bussiness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextFieldBold"
+                android:textSize="16dp"
+                android:background="@color/colorAccent"
+                android:drawableEnd="@drawable/ic_arrow_down"
+                android:padding="12dp"
+                android:textColor="@color/white"
+                android:text="Business Profile"/>
+                 <androidx.constraintlayout.widget.ConstraintLayout
+                     android:id="@+id/container1"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:visibility="gone"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintTop_toBottomOf="@+id/card_view1">
+
+                     <TextView
+                         android:id="@+id/tv_add_new_business"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="Add New"
+                         android:padding="6dp"
+                         android:background="@drawable/btn_submit"
+                         android:textSize="16sp"
+                         android:layout_marginTop="32dp"
+                         android:textAppearance="@style/TextFieldBold"
+                         android:textColor="@color/white" android:drawableStart="@drawable/ic_baseline_add_circle_outline_24"
+                         android:layout_marginStart="32dp"
+                         app:layout_constraintTop_toTopOf="parent"
+                         app:layout_constraintStart_toStartOf="parent"
+                         />
+
+                     <androidx.recyclerview.widget.RecyclerView
+                         android:id="@+id/lst_business_profile"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="8sp"
+                         android:layout_marginEnd="8sp"
+                         android:layout_marginTop="8dp"
+
+                         app:layout_constraintTop_toBottomOf="@+id/layout_business_profile"
+                         app:layout_constraintStart_toStartOf="parent"
+                         app:layout_constraintEnd_toEndOf="parent"/>
+
+                     <androidx.cardview.widget.CardView
+                         android:id="@+id/cd_business_profile"
+                         style="@style/Base.CardView"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_margin="10dp"
+                         android:padding="4dp"
+                         android:visibility="gone"
+                         app:cardElevation="8dp"
+                         app:cardBackgroundColor="#E90B0A0A"
+
+                         app:layout_constraintEnd_toEndOf="parent"
+                         android:layout_marginTop="32dp"
+                         app:layout_constraintStart_toStartOf="parent"
+                         app:layout_constraintTop_toBottomOf="@+id/tv_add_new_business"
+                         >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layout_profile_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16sp"
+    android:padding="8dp"
+    android:visibility="visible"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tv_add_new_business">
+    <TextView
+        android:id="@+id/textview10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:text="Profile Name"
+        android:textAppearance="@style/TextFieldBold"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/et_profile_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/box_bg"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="6dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/textview10" />
+    <Button
+        android:id="@+id/btn_save_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Save"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/btn_submit"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:layout_marginTop="8dp"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/et_profile_name"
+        android:layout_marginBottom="16sp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+                     </androidx.cardview.widget.CardView>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layout_business_profile"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="visible"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/cd_business_profile"    app:layout_constraintEnd_toEndOf="parent">
+
+                     <RelativeLayout
+                         android:id="@+id/relative_layout_img"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         app:layout_constraintEnd_toEndOf="parent"
+                         app:layout_constraintTop_toTopOf="parent"
+                       >
+
+                     <ImageView
+                         android:id="@+id/img"
+                         android:layout_width="110dp"
+                         android:layout_height="110dp"
+                         android:layout_centerHorizontal="true"
+                         android:layout_marginBottom="-50dp"
+                         android:elevation="5dp"
+                         android:src="@mipmap/ic_launcher_foreground" />
+
+                     <ImageView
+                         android:id="@+id/img_member"
+                         android:layout_width="100dp"
+                         android:layout_height="100dp"
+                         android:layout_centerHorizontal="true"
+                         android:layout_marginTop="5dp"
+                         android:elevation="5dp" />
+                     </RelativeLayout>
+                     <TextView
+                         android:id="@+id/textview1"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="8dp"
+                         android:layout_marginTop="5dp"
+                         android:text="Name"
+                         android:textAppearance="@style/TextFieldBold"
+                         android:textColor="@color/white"
+                         android:textSize="14sp"
+                         app:layout_constraintStart_toStartOf="parent"
+                         app:layout_constraintTop_toBottomOf="@+id/relative_layout_img" />
+
+                     <EditText
+                         android:id="@+id/et_name"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="8dp"
+                         android:layout_marginEnd="8dp"
+                         android:background="@drawable/box_bg"
+                         android:imeOptions="actionNext"
+                         android:inputType="text"
+                         android:maxLines="1"
+                         android:padding="6dp"
+                         android:textColor="@color/white"
+                         android:textSize="14sp"
+                         app:layout_constraintTop_toBottomOf="@+id/textview1" />
+                     <TextView
+                         android:id="@+id/textview2"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="8dp"
+
+                         android:layout_marginTop="8dp"
+                         android:text="Sur Name"
+                         android:textAppearance="@style/TextFieldBold"
+                         android:textColor="@color/white"
+                         android:textSize="14sp"
+                         app:layout_constraintStart_toStartOf="parent"
+                         app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+                     <EditText
+                         android:id="@+id/et_sir_name"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="8dp"
+                         android:layout_marginEnd="8dp"
+                         android:background="@drawable/box_bg"
+                         android:imeOptions="actionNext"
+                         android:inputType="text"
+                         android:maxLines="1"
+                         android:padding="6dp"
+                         android:textColor="@color/white"
+                         android:textSize="14sp"
+                         app:layout_constraintTop_toBottomOf="@+id/textview2" />
+                     <TextView
+                         android:id="@+id/textview3"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="8dp"
+
+                         android:layout_marginTop="8dp"
+                         android:text="Degination"
+                         android:textAppearance="@style/TextFieldBold"
+                         android:textColor="@color/white"
+                         android:textSize="14sp"
+                         app:layout_constraintStart_toStartOf="parent"
+                         app:layout_constraintTop_toBottomOf="@+id/et_business_name" />
+
+                     <EditText
+                         android:id="@+id/et_degination"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="8dp"
+                         android:layout_marginEnd="8dp"
+                         android:background="@drawable/box_bg"
+                         android:imeOptions="actionNext"
+                         android:inputType="text"
+                         android:maxLines="1"
+                         android:padding="6dp"
+                         android:textColor="@color/white"
+                         android:textSize="14sp"
+                         app:layout_constraintTop_toBottomOf="@+id/textview3" />
+                     <TextView
+                         android:id="@+id/textview4"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="8dp"
+
+                         android:layout_marginTop="8dp"
+                         android:text="Business Name"
+                         android:textAppearance="@style/TextFieldBold"
+                         android:textColor="@color/white"
+                         android:textSize="14sp"
+                         app:layout_constraintStart_toStartOf="parent"
+                         app:layout_constraintTop_toBottomOf="@+id/et_sir_name" />
+
+                     <EditText
+                         android:id="@+id/et_business_name"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="8dp"
+                         android:layout_marginEnd="8dp"
+                         android:background="@drawable/box_bg"
+                         android:imeOptions="actionNext"
+                         android:inputType="text"
+                         android:maxLines="1"
+                         android:padding="6dp"
+                         android:textColor="@color/white"
+                         android:textSize="14sp"
+                         app:layout_constraintTop_toBottomOf="@+id/textview4" />
+                     <TextView
+                         android:id="@+id/textview5"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="8dp"
+
+                         android:layout_marginTop="8dp"
+                         android:text="Description"
+                         android:textAppearance="@style/TextFieldBold"
+                         android:textColor="@color/white"
+                         android:textSize="14sp"
+                         app:layout_constraintStart_toStartOf="parent"
+                         app:layout_constraintTop_toBottomOf="@+id/et_degination" />
+
+                     <EditText
+                         android:id="@+id/et_Discription"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="8dp"
+                         android:layout_marginEnd="8dp"
+                         android:background="@drawable/box_bg"
+                         android:imeOptions="actionNext"
+                         android:inputType="text"
+                         android:maxLines="1"
+                         android:padding="6dp"
+                         android:textColor="@color/white"
+                         android:textSize="14sp"
+                         app:layout_constraintTop_toBottomOf="@+id/textview5" />
+                      <Button
+                          android:id="@+id/btn_business_save"
+                          android:layout_width="wrap_content"
+                          android:layout_height="35dp"
+                          android:gravity="center"
+                          android:textColor="@color/white"
+                          android:textSize="14sp"
+                          android:visibility="gone"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          android:background="@drawable/btn_submit"
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintTop_toBottomOf="@+id/et_Discription"
+                          android:layout_marginTop="16sp"
+                          android:layout_marginStart="32dp"
+                          android:text="Save"/>
+                     <Button
+                         android:id="@+id/btn_business_update"
+                         android:layout_width="wrap_content"
+                         android:layout_height="35dp"
+                         android:gravity="center"
+                         android:textColor="@color/white"
+                         android:textSize="14sp"
+                         android:visibility="gone"
+                         android:layout_marginTop="16sp"
+                         android:background="@drawable/btn_submit"
+                         app:layout_constraintStart_toStartOf="parent"
+                         app:layout_constraintEnd_toEndOf="parent"
+                         app:layout_constraintTop_toBottomOf="@+id/et_Discription"
+                         android:layout_marginStart="32dp"
+                         android:text="Update"/>
+                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/base_cardview1"
+                    style="@style/Base.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="4dp"
+
+                    app:cardElevation="8dp"
+                    app:cardBackgroundColor="#000"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/base_cardview"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:id="@+id/tv_personal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextFieldBold"
+                            android:textSize="16dp"
+                            android:background="@color/colorAccent"
+                            android:drawableEnd="@drawable/ic_arrow_down"
+                            android:padding="12dp"
+                            android:textColor="@color/white"
+                            android:text="Referral Setting"/>
+                        <LinearLayout
+                            android:id="@+id/container2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:padding="4dp"
+
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextFieldBold"
+                                android:textSize="16dp"
+                                android:padding="12dp"
+                                android:textColor="@color/white"
+                                android:text="Team"/>
+                                        <RadioGroup
+                                            android:id="@+id/re_leg" android:layout_width="match_parent" android:layout_height="wrap_content"
+                                            android:layout_marginStart="8dp"
+                                            android:layout_marginEnd="8dp"
+                                            android:orientation="horizontal"
+                                            android:weightSum="1">
+
+                                            <RadioButton
+                                                android:id="@+id/left"
+                                                android:layout_width="0dp" android:layout_height="wrap_content"
+                                                android:layout_weight="0.5"
+                                                android:checked="true"
+                                                android:buttonTint="@color/white"
+                                                android:text="Left" android:textColor="@color/white" />
+
+                                            <RadioButton
+                                                android:id="@+id/Right"
+                                                android:layout_width="0dp" android:layout_height="wrap_content"
+                                                android:layout_weight="0.5"
+                                                android:text="Right"
+                                                android:buttonTint="@color/white"
+                                                android:textColor="@color/white" />
+                                        </RadioGroup>
+
+                            <Button
+                                android:id="@+id/btn_update"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="32dp"
+                                android:layout_marginEnd="8dp"
+
+                                android:background="@color/colorAccent"
+                                android:gravity="center"
+                                android:text="Update"
+
+                                android:layout_gravity="center"
+                                android:textAppearance="@style/TextFieldBold"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                android:padding="4dp"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/base_cardview5"
+                style="@style/Base.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:cardBackgroundColor="#000"
+
+                app:cardElevation="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/base_cardview1"
+                >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:orientation="vertical">
+                <TextView
+                    android:textColor="@color/white"
+
+                    android:id="@+id/tv_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:drawableEnd="@drawable/ic_arrow_down"
+                    android:padding="12dp"
+                    android:textAppearance="@style/TextFieldBold"
+                    android:textSize="16dp"
+                    android:text="Phone Number"/>
+                <LinearLayout
+                    android:id="@+id/linear3"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+
+                    >
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:fillViewport="true"
+                        android:overScrollMode="always"
+                        android:scrollbars="vertical"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="20dp">
+
+
+
+                            <TextView
+                                android:id="@+id/text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="5dp"
+                                android:text="Contact No"
+                                android:textAppearance="@style/TextFieldBold"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/et_contact"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/box_bg"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:maxLength="10"                        android:maxLines="1"
+                                android:padding="6dp"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintTop_toBottomOf="@+id/text" />
+
+                            <CheckBox
+                                android:id="@+id/chakboxMobile"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginTop="4dp"
+                                android:buttonTint="@color/white"
+                                android:text="IsWhatsapp"
+                                android:gravity="start"
+                                android:textColor="@color/white"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/et_contact" />
+                            <CheckBox
+                                android:id="@+id/mob_including_prifile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginBottom="4dp"
+                                android:buttonTint="@color/white"
+                                android:text="Including Profile"
+                                android:textColor="@color/white"
+                                app:layout_constraintTop_toBottomOf="@+id/et_contact" />
+                            <Button
+                                android:id="@+id/bt_save_contact"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/btn_submit"
+                                android:text="Update"
+                                android:layout_gravity="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="12dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerview_contact"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp" android:text="@string/appbar_scrolling_view_behavior"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                />
+                        </LinearLayout>
+                    </androidx.core.widget.NestedScrollView>
+
+                </LinearLayout>
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/base_cardview2"
+                    style="@style/Base.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+
+                    app:cardElevation="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:cardBackgroundColor="#000"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/base_cardview1"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        android:orientation="vertical">
+                        <TextView
+                            android:textColor="@color/white"
+
+                            android:id="@+id/tv_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/ic_arrow_down"
+                            android:padding="12dp"
+                            android:textSize="16dp"
+                            android:background="@color/colorAccent"
+                            android:textAppearance="@style/TextFieldBold"
+                            android:text="Email"/>
+                        <LinearLayout
+                            android:id="@+id/linear4"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:orientation="vertical">
+
+                            <androidx.core.widget.NestedScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="16dp"
+                                android:fillViewport="true"
+                                android:overScrollMode="always"
+                                android:scrollbars="vertical"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingBottom="20dp">
+
+
+
+                                    <TextView
+                                        android:id="@+id/text1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Email"
+                                        android:textAppearance="@style/TextFieldBold"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <EditText
+                                        android:id="@+id/et_Email"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:background="@drawable/box_bg"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="textEmailAddress"
+                                        android:maxLines="1"
+                                        android:padding="6dp"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        app:layout_constraintTop_toBottomOf="@+id/text" />
+                                    <CheckBox
+                                        android:id="@+id/chack_email_status"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Include Profile"
+                                        android:textColor="@color/white"
+                                        android:textSize="13dp"
+                                        android:buttonTint="@color/white"/>
+
+                                    <Button android:id="@+id/bt_updateemail" android:layout_width="wrap_content"
+                                        android:layout_height="35dp"
+                                        android:layout_marginTop="8dp" android:background="@drawable/btn_submit"
+                                        android:text="Update"
+                                        android:layout_gravity="center"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/white"
+                                        android:textSize="12dp"
+                                        />
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/recyclerviewemail"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="12dp"
+                                        android:text="@string/appbar_scrolling_view_behavior"
+                                        />
+                                </LinearLayout>
+                            </androidx.core.widget.NestedScrollView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/base_cardview3"
+                    style="@style/Base.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:cardBackgroundColor="#000"
+
+                    app:cardElevation="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/base_cardview2"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_web"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent"
+                            android:drawableEnd="@drawable/ic_arrow_down"
+                            android:padding="12dp"
+                            android:text="Web Link"
+                            android:textAppearance="@style/TextFieldBold"
+                            android:textColor="@color/white"
+                            android:textSize="16dp" />
+
+                        <LinearLayout
+                            android:id="@+id/linear5"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+                            <androidx.core.widget.NestedScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="16dp"
+                                android:fillViewport="true"
+                                android:overScrollMode="always"
+                                android:scrollbars="vertical"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingBottom="20dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Select"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:textColor="@color/white"/>
+                                    <TextView
+                                        android:id="@+id/tv_Web_link"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:background="@drawable/box_bg"
+                                        android:drawableEnd="@drawable/ic_arrow_down"
+                                        android:drawablePadding="8dp"
+                                        android:hint="Select"
+                                        android:padding="8dp"
+                                        android:textColor="@color/white"
+                                        android:textColorHint="@color/lght_grey"
+                                        android:layout_marginBottom="8dp"
+                                        android:singleLine="true"
+                                        app:layout_constraintEnd_toStartOf="@+id/tv_status"
+                                        app:layout_constraintHorizontal_bias="0.5"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+                                    <TextView
+                                        android:id="@+id/text_weblink"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="16dp"
+                                        android:text="Web Link"
+                                        android:textAppearance="@style/TextFieldBold"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <EditText
+                                        android:id="@+id/et_website"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:background="@drawable/box_bg"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="text"
+                                        android:maxLines="1"
+                                        android:padding="6dp"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        app:layout_constraintTop_toBottomOf="@+id/text" />
+
+                                    <CheckBox
+                                        android:id="@+id/checkBoxweblink"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:buttonTint="@color/white"
+                                        android:text="Is Redirect"
+                                        android:textColor="@color/white"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/et_website" />
+                                    <CheckBox
+                                        android:id="@+id/web_include_profile"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:buttonTint="@color/white"
+                                        android:text="Include Profile"
+                                        android:textColor="@color/white"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/et_website" />
+
+                                    <Button
+                                        android:id="@+id/bt_update_web_link"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="35dp"
+                                        android:layout_marginTop="8dp"
+                                        android:background="@drawable/btn_submit"
+                                        android:text="Update"
+                                        android:layout_gravity="center"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/white"
+                                        android:textSize="12dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/recyclerview_Web_link"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="12dp"
+                                        android:text="@string/appbar_scrolling_view_behavior"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        />
+                                </LinearLayout>
+
+                            </androidx.core.widget.NestedScrollView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/base_cardview4"
+                    style="@style/Base.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:cardBackgroundColor="#000"
+                    android:paddingBottom="30dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/base_cardview3"
+                    >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:textColor="@color/white"
+
+                        android:id="@+id/tv_social_media"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/ic_arrow_down"
+                        android:padding="12dp"
+                        android:textSize="16dp"
+                        android:textAppearance="@style/TextFieldBold"
+                        android:background="@color/colorAccent"
+                        android:text="Social Media"/>
+                    <LinearLayout
+                        android:id="@+id/linear6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <androidx.core.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:fillViewport="true"
+                            android:overScrollMode="always"
+                            android:scrollbars="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingBottom="20dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Select"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/white"/>
+                                <TextView
+                                    android:id="@+id/tv_social_link"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:background="@drawable/box_bg"
+                                    android:drawableEnd="@drawable/ic_arrow_down"
+                                    android:drawablePadding="8dp"
+                                    android:hint="Select"
+                                    android:padding="8dp"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/lght_grey"
+                                    android:layout_marginBottom="8dp"
+                                    android:singleLine="true"
+                                    app:layout_constraintEnd_toStartOf="@+id/tv_status"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"/>
+
+                                <TextView
+                                    android:id="@+id/text_social"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Social Media Link"
+                                    android:textAppearance="@style/TextFieldBold"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    />
+
+                                <EditText
+                                    android:id="@+id/et_social_media"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:background="@drawable/box_bg"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="textWebEditText"
+                                    android:maxLines="1"
+                                    android:padding="6dp"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp"
+                                    />
+
+                                <CheckBox
+                                    android:id="@+id/checkBox_social"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:buttonTint="@color/white"
+                                    android:text=" Is Redirect"
+                                    android:textColor="@color/white"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/et_social_media" />
+
+                                <CheckBox
+                                    android:id="@+id/check_social_include_profile"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:buttonTint="@color/white"
+                                    android:text="Including Profile"
+                                    android:textColor="@color/white"
+
+                                    app:layout_constraintTop_toBottomOf="@+id/et_contact" />
+                                <Button
+                                    android:id="@+id/bt_update_social"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/btn_submit"
+                                    android:text="Update"
+                                    android:layout_gravity="center"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                    />
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recyclerview_social"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:text="@string/appbar_scrolling_view_behavior" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                                    android:paddingBottom="32dp"
+                                    />
+
+                            </LinearLayout>
+                        </androidx.core.widget.NestedScrollView>
+                    </LinearLayout>
+                </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

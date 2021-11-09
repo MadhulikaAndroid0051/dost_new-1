@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DOST</string>
+
+    <!--    PERMISSIONS text   -->
+    <string name="alert_internet">There is no Internet Connectivity</string>
+    <string name="alert_text">Alert</string>
+    <string name="share_using">Enter Mobile No.</string>
+    <string name="permission_camera_rationale11">Some permission are required to use the app.</string>
+    <string name="reqst_permission">Request permission?</string>
+    <string name="version">Version </string>
+    <!--    Login Screen-->
+
+    <!--    Verification OTP-->
+    <string name="terms">By Proceeding you agree to our Terms &amp; conditions</string>
+</resources>

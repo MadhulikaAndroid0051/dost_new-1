@@ -1,0 +1,206 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_login"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="8dp"
+    app:cardCornerRadius="3dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="8dp">
+        <TextView
+            android:id="@+id/tv_sr_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Sr No:- 1"
+            android:paddingTop="2dp"
+            android:textAppearance="@style/TextFieldBold"
+            android:paddingBottom="2dp"
+            android:paddingLeft="16dp"
+            android:paddingEnd="16dp"
+            android:background="@drawable/btn_submit"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Narration"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="16dp"
+            android:paddingEnd="16dp"
+            android:textAppearance="@style/TextFieldBold"
+            android:background="@drawable/btn_submit"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sr_no" />
+
+        <TextView
+            android:id="@+id/tv_mem_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Android Develop"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextFieldBold"
+            android:textColor="@color/text_color"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Balance"
+            android:visibility="gone"
+            android:textSize="12sp"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_mem_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="XXXXXX"
+            android:visibility="gone"
+            android:textAppearance="@style/TextFieldBold"
+            android:textColor="@color/text_color"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:layout_marginEnd="8dp"
+            android:paddingBottom="3dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="16sp"
+            android:paddingLeft="16sp"
+            android:textAppearance="@style/TextFieldBold"
+            android:text="Transaction Date"
+            android:textSize="11sp"
+            android:background="@drawable/btn_submit"
+            android:textColor="@color/white"
+         app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_join_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:gravity="start"
+            android:text="XX XXX XXXX"
+            android:textAppearance="@style/TextFieldBold"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/text_color"
+            android:textSize="12sp"
+            app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:gravity="end"
+            android:textAppearance="@style/TextFieldBold"
+            android:text="CrAmount"
+            android:background="@drawable/btn_tr_date"
+            android:textSize="11sp"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:textColor="@color/white"
+app:layout_constraintStart_toStartOf="parent"            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView29"
+            app:layout_constraintTop_toBottomOf="@+id/tv_mem_name" />
+
+        <TextView
+            android:id="@+id/tv_cr_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="end"
+            android:text="00"
+            android:textAppearance="@style/TextFieldBold"
+            android:textColor="@color/text_color"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"            app:layout_constraintTop_toBottomOf="@+id/textView31" />
+        <TextView
+            android:id="@+id/tvdr_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:paddingEnd="8dp"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingStart="8dp"
+            android:gravity="end"
+            android:textAppearance="@style/TextFieldBold"
+            android:text="DrAmount"
+            android:textSize="11sp"
+            android:background="@drawable/btn_cr_amount"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_mem_name" />
+
+
+        <TextView
+            android:id="@+id/tv_dr_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:gravity="end"
+            android:text="00"
+            android:textAppearance="@style/TextFieldBold"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/text_color"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvdr_amount" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+

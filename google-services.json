@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "934592145931",
+    "project_id": "dost-37a76",
+    "storage_bucket": "dost-37a76.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934592145931:android:35cf1a38c0befc59a7b50e",
+        "android_client_info": {
+          "package_name": "com.dost"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934592145931-ti36302l6rakgd2f10g3pvug52tvlhop.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn2ZvTeQEXTS1fXNGKAqEnwgy_JuYSh0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934592145931-ti36302l6rakgd2f10g3pvug52tvlhop.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

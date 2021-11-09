@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tv_transfer"
+        android:enabled="true"
+        android:title="Transfer" />
+    <item
+        android:id="@+id/tv_add_fund"
+        android:enabled="true"
+        android:title="Add Fund" />
+    <item
+        android:id="@+id/tv_withdrawal"
+        android:enabled="true"
+        android:title="Withdrawal" />
+    <item
+        android:id="@+id/tv_wallet_statement"
+        android:enabled="true"
+        android:title="Wallet Statement" />
+    <item
+        android:id="@+id/tv_earning_statement"
+         android:visible="false"
+        android:title="Earning Statement" />
+    <item
+        android:id="@+id/tv_direct_commmission"
+        android:visible="false"
+        android:title="Direct Commission" />
+    <item
+        android:id="@+id/tv_commission"
+        android:visible="false"
+        android:title="Commission" />
+    <item
+        android:id="@+id/tv_paid_commission"
+        android:visible="false"
+        android:title="Paid Commission" />
+
+</menu>

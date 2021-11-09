@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tv_all_incom"
+        android:visible="true"
+        android:title="All Income" />
+    <item
+        android:id="@+id/tv_direct_commmission"
+        android:visible="true"
+        android:title="Referral Income" />
+    <item
+        android:id="@+id/tv_commission"
+        android:visible="true"
+        android:title="Binary Income" />
+    <item
+        android:id="@+id/tv_paid_commission"
+        android:visible="true"
+        android:title="Distributor Income" />
+    <item
+        android:id="@+id/tv_distributor_amt"
+        android:visible="true"
+        android:title="Referral Distributor Income" />
+
+
+</menu>

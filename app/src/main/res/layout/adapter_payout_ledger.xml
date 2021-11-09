@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+        <TextView
+            android:id="@+id/text_narration"
+            android:layout_width="wrap_content"
+            android:text="Narration :"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextFieldBold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_narration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/light_black"
+            android:textSize="13sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/text_narration"
+
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/view_color"
+            app:layout_constraintTop_toBottomOf="@+id/tv_narration"/>
+
+        <TextView
+            android:id="@+id/text_dr_Amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextFieldBold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            android:text=" DrAmount :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
+        <TextView
+            android:id="@+id/tv_dr_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/light_black"
+            android:textSize="13sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/text_dr_Amount"
+
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/view_color"
+            app:layout_constraintTop_toBottomOf="@+id/text_dr_Amount"/>
+
+
+        <TextView
+            android:id="@+id/text_Cr_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="CrAmount :"
+            android:textAppearance="@style/TextFieldBold"
+            android:textColor="@color/colorPrimary"
+
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+        <TextView
+            android:id="@+id/tv_cr_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="djvkvjf"
+            android:textColor="@color/light_black"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@+id/text_Cr_amount"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/view_color"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cr_amount"/>
+
+        <TextView
+            android:id="@+id/text_add_on"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="AddedOn :"
+            android:textAppearance="@style/TextFieldBold"
+
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <TextView
+            android:id="@+id/tv_add_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="djvkvjf"
+            android:textColor="@color/light_black"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@+id/text_add_on"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/view_color"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_on"/>
+
+
+        <TextView
+            android:id="@+id/text_ewallet_balance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="EwalletBalance :"
+            android:textAppearance="@style/TextFieldBold"
+
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+        <TextView
+            android:id="@+id/tv_ewallet_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="djvkvjf"
+            android:textColor="@color/light_black"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@+id/text_ewallet_balance"
+            app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

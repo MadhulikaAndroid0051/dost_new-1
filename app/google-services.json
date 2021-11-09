@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1076642468344",
+    "project_id": "urdost-eb36e",
+    "storage_bucket": "urdost-eb36e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076642468344:android:ba80bd2c6d14e6bbd0c60d",
+        "android_client_info": {
+          "package_name": "urdost.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076642468344-l8dhdrbtqe30tupqif6m962uvv5805li.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRFTgUmtwNaoi0S7AxZYwKiORDnVeFijE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076642468344-l8dhdrbtqe30tupqif6m962uvv5805li.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

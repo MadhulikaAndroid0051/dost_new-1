@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.urdost">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+
+    <application
+        android:name="com.urdost.app.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <activity android:name="com.urdost.Activity.SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="urdost.page.link"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="urdost.com.com.vansuita.pickimage.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/picker_provider_paths" />
+        </provider>
+
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+<activity android:name="com.urdost.Activity.WebNFCActivateCard"/>
+        <activity android:name=".Activity.ActivityTree"/>
+        <activity android:name="com.urdost.Activity.NewContainerActivity" />
+        <activity android:name="com.urdost.Activity.ActivityOTP"/>
+        <activity android:name="com.urdost.Activity.WelcomeIntro"/>
+        <activity android:name="com.urdost.Activity.LoginActivity"/>
+    <activity android:name="com.urdost.Activity.Signup"/>
+        <activity android:name="com.urdost.Activity.Password"/>
+        <activity android:name="com.urdost.Activity.AddDistributor"/>
+        <activity android:name="com.urdost.Activity.NewPassword"/>
+        <activity android:name="com.urdost.Activity.DiractList"/>
+        <activity android:name="com.urdost.Activity.EventDetails"/>
+        <activity android:name="com.urdost.Activity.Transfer_Ewallet"/>
+        <activity android:name="com.urdost.Activity.WalletRequest"/>
+        <activity android:name="com.urdost.Activity.Withdrawal"/>
+        <activity android:name="com.urdost.Activity.EditProfile"/>
+        <activity android:name="com.urdost.Activity.ForgotPassword"/>
+        <activity android:name="com.urdost.NFCActivity.ActivateNfcDDCardDetails"/>
+        <activity android:name="com.urdost.NFCActivity.ActivateNfcDDCards"/>
+        <activity android:name="com.urdost.NFCActivity.ActivateNfcAddress"/>
+        <activity android:name="com.urdost.Activity.SecurityVerification"/>
+        <activity android:name="com.urdost.Activity.ReferEarn"/>
+        <activity android:name="com.urdost.Activity.MyBusinessProfile"/>
+        <activity android:name="com.urdost.Fragment.Scanner"/>
+        <activity android:name="com.urdost.Activity.UploadeKyc"/>
+        <activity android:name="com.urdost.Activity.NfcFullImageDetails"/>
+        <activity android:name="com.urdost.Activity.WebNfcCodeActivate"/>
+        <activity android:name="com.urdost.Fragment.NfcScanner"/>
+        <activity android:name=".Fragment.InvantoryRequestActicity"/>
+        <activity android:name=".Activity.InvantoryRequestDetails"/>
+        <activity android:name=".Fragment.RequestedInvantory"/>
+        <activity android:name=".Activity.PurchaseOrderActivity"/>
+        <activity android:name=".Activity.TaxInvoiceActivity"/>
+        <activity android:name=".Activity.ImageProfile"/>
+        <activity android:name=".Activity.CardActivityAdd"/>
+
+
+
+    </application>
+
+</manifest>

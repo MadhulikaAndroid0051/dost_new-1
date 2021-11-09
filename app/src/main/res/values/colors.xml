@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#181819</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#9C27B0</color>
+    <color name="yellow">#EFD809</color>
+
+    <color name="colorPrimarylight">#29292B</color>
+    <color name="orange">#FF9800</color>
+
+    <color name="red">#EA4C41</color>
+    <color name="text_color">#090117</color>
+    <color name="textcolor">#090117</color>
+    <color name="lightgrey">#605E5E</color>
+    <!--    Text Color Gradient-->
+    <color name="start_color">#DB7D4A</color>
+    <color name="end_color">#FC034D</color>
+    <color name="white">#ffffff</color>
+    <color name="lght_grey">#605E5E</color>
+    <color name="light_black">#3E3C3C</color>
+    <color name="view_color">#DEDEE1</color>
+    <color name="light_pink">#9f4df1</color>
+    <color name="blue">#0360AA</color>
+    <color name="dark_blue">#012949</color>
+    <color name="fab_color_shadow">#44000000</color>
+
+    <color name="tab_bg">#0063e8</color>
+    <color name="tab_inactive">#666666</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#ffffff</color>
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#ff4f38</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+    </array>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBackground">#FBFBFB</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#757575</color>
+</resources>

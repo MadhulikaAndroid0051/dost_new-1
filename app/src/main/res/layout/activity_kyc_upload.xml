@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/action_bar"
+        android:id="@+id/toolbar"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/container"
+      app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/container">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="8dp"
+                android:text="Aadhar Number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAppearance="@style/TextFieldBold"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/tv_adhar_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/box_bg"
+                android:digits="0123456789"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="12"
+                android:maxLines="1"
+                android:hint="Enter Aadhar Number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text1"
+                android:padding="6dp"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Status :-"
+                app:layout_constraintEnd_toStartOf="@+id/img_adhar"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_adhar"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <Button
+                android:layout_margin="20dp"
+                android:id="@+id/btn_adhar"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/btn_submit"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:text="Upload Aadhar"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/img_adhar"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_adhar_number" />
+
+            <ImageView
+                android:id="@+id/img_adhar"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:padding="4dp"
+
+                android:background="@drawable/box_bg"
+                android:src="@drawable/aadhar_new"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_adhar"
+                app:layout_constraintTop_toBottomOf="@+id/tv_adhar_number" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="32dp"
+                android:text="Pan Number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAppearance="@style/TextFieldBold"
+                android:textColor="@color/white"
+
+                app:layout_constraintTop_toBottomOf="@+id/img_adhar"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_pan_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/box_bg"
+
+                android:maxLength="10"
+                android:maxLines="1"
+                android:hint="Enter Pan Number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text2"
+                android:padding="6dp"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tv_status_pan"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Status :-"
+                app:layout_constraintEnd_toStartOf="@+id/img_pan"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_pan"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <Button
+                android:layout_margin="20dp"
+                android:id="@+id/btn_pan"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/btn_submit"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:text="Upload Pan"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/img_pan"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_pan_number" />
+
+            <ImageView
+                android:id="@+id/img_pan"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:padding="4dp"
+
+                android:background="@drawable/box_bg"
+                android:src="@drawable/pancard_new"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_pan"
+                app:layout_constraintTop_toBottomOf="@+id/et_pan_number" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="32dp"
+                android:text="Document Number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAppearance="@style/TextFieldBold"
+                android:textColor="@color/white"
+
+                app:layout_constraintTop_toBottomOf="@+id/img_pan"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_document"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/box_bg"
+                android:digits="0123456789"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="12"
+                android:maxLines="1"
+                android:hint="Enter Document Number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text3"
+                android:padding="6dp"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+            <TextView
+
+                android:id="@+id/tv_document_status"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Status :-"
+                app:layout_constraintEnd_toStartOf="@+id/img_document"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_document"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <Button
+                android:layout_margin="20dp"
+                android:id="@+id/btn_document"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/btn_submit"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:text="Upload Document"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/img_document"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_document" />
+
+            <ImageView
+                android:id="@+id/img_document"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:padding="4dp"
+                android:background="@drawable/box_bg"
+                android:src="@drawable/documents_new"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_document"
+                app:layout_constraintTop_toBottomOf="@+id/et_document" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

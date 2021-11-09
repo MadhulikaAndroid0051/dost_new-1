@@ -1,0 +1,149 @@
+<androidx.cardview.widget.CardView android:id="@+id/cv_adhar_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    app:layout_constraintTop_toBottomOf="@+id/btn_update_pan"
+    app:cardElevation="8dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:paddingBottom="6dp">
+            <ImageView
+                android:id="@+id/border_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/adhar_logo"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+            </ImageView>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@color/white"
+                android:paddingBottom="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/border_layout1">
+                <ImageView
+                    android:id="@+id/img_adhar_profile"
+                    android:padding="2dp"
+                    android:layout_width="75dp"
+                    android:layout_height="85dp"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_barth_adhar"
+                    android:src="@drawable/person_img"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="48dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <ImageView
+                    android:id="@+id/imge_adhar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/qr_image"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_adhar_father"/>
+                <TextView
+                    android:id="@+id/tv_name_adahr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_adhar_profile"
+                    android:text="XXXXXX XXXXXX"
+                    android:layout_marginStart="16dp"
+
+                    android:textColor="@color/text_color"
+                    android:textAppearance="@style/TextFieldBold"
+                    android:textSize="14sp"
+                    />
+                <TextView
+                    android:id="@+id/tv_adhar_father"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name_adahr"
+                    app:layout_constraintStart_toEndOf="@+id/img_adhar_profile"
+
+                    android:text="XXXXXXXX"
+                    android:textColor="@color/text_color"
+                    android:layout_marginStart="16dp"
+                     android:textAppearance="@style/TextFieldBold"
+                    android:textSize="12sp"
+                    />
+                <TextView
+                    android:id="@+id/tv_address_adhar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_adhar_father"
+                    app:layout_constraintStart_toEndOf="@+id/img_adhar_profile"
+                    android:text="जन्म तिथि/DOB: XX/XX/XXXX"
+                    android:textColor="@color/text_color"
+                    android:textSize="12sp"
+                    />
+                <TextView
+                    android:id="@+id/tv_barth_adhar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_address_adhar"
+                    app:layout_constraintStart_toEndOf="@+id/img_adhar_profile"
+                    android:text="XXXX XXXX"
+                    android:layout_marginStart="16dp"
+
+                    android:textColor="@color/text_color"
+                    android:textSize="12sp"
+                    />
+                <TextView
+                    android:id="@+id/tv_adhar_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_barth_adhar"
+                    app:layout_constraintStart_toEndOf="@+id/img_adhar_profile"
+                    android:layout_marginStart="16dp"
+                    android:text="XXXX XXXX XXXX"
+                    android:textAppearance="@style/TextFieldBold"
+
+
+                    android:textColor="@color/text_color"
+                    android:textSize="14sp"
+                    android:paddingBottom="16dp"
+                    />
+<View
+android:id="@+id/view1"
+android:layout_width="match_parent"
+android:layout_height="1dp"
+android:background="@color/red"
+app:layout_constraintTop_toBottomOf="@+id/tv_adhar_number"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+android:paddingBottom="16dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="आधार - आम आदमी की पहचान का अधिकार"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"
+                    android:textAppearance="@style/TextFieldBold"
+                    android:textColor="@color/text_color" app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view1"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>

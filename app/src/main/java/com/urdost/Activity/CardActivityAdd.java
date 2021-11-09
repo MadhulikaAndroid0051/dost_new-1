@@ -74,7 +74,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
 
     BottomSheetDialog dialogHealthCard, dialogUpdateHealthCard, dialogPanCard, dialogUpdatePanCard, dialogSaveAadharCard, dialogUpdateAdharCard;
-    private String aname,afname,adob,aemail,amobile,aaddress,fname,hname,haddress;
+    private String aname, afname, adob, aemail, amobile, aaddress, fname, hname, haddress;
     @BindView(R.id.img_back)
     ImageView imgBack;
     @BindView(R.id.image_view)
@@ -130,7 +130,8 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
     private String cardname, carddob, cardmobile;
     private String panname, pandate;
     private String norecordfound;
-    private ChoosePhoto choosePhoto=null;
+    private ChoosePhoto choosePhoto = null;
+    public static boolean aadharimg = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -142,7 +143,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         getPanCard();
         setPagerAdapter();
         getData();
-       // Toast.makeText(context, healthcardid+"", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(context, healthcardid+"", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -153,11 +154,11 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
                 onBackPressed();
                 break;
             case R.id.btn_Edit:
-                 if (healthcardid.equalsIgnoreCase("")){
-                   openEditPanDilog();
-               }else {
-                   openDialogUpdateHealthCard();
-               }
+                if (healthcardid.equalsIgnoreCase("")) {
+                    openEditPanDilog();
+                } else {
+                    openDialogUpdateHealthCard();
+                }
                 break;
             case R.id.btn_update_pan:
                 if (pancardid.equalsIgnoreCase(""))
@@ -168,7 +169,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
                 showDialog();
                 break;
             case R.id.btn_adhar:
-               if (pk_adarid.equalsIgnoreCase(""))
+                if (pk_adarid.equalsIgnoreCase(""))
                     openSaveAdharCard();
                 else openUpdateAdharCard();
 
@@ -188,7 +189,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         TextView tv_date_pan = sheetView.findViewById(R.id.tv_date_pan);
         EditText et_mobile_pan = sheetView.findViewById(R.id.et_mobile_pan);
         RadioGroup rg12_gender = sheetView.findViewById(R.id.rg12_gender);
-        EditText et_health_id=sheetView.findViewById(R.id.et_health_id);
+        EditText et_health_id = sheetView.findViewById(R.id.et_health_id);
         // RadioButton mail=sheetView.findViewById(R.id.male);
         //  RadioButton female=sheetView.findViewById(R.id.female);
 
@@ -211,10 +212,10 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
 
         btn_update.setOnClickListener(v -> {
             dialogHealthCard.dismiss();
-            if (et_health_id.getText().toString().length()==10) {
+            if (et_health_id.getText().toString().length() == 10) {
                 SaveHealthData(et_name_pan.getText().toString().trim(),
                         tv_date_pan.getText().toString().trim(), et_mobile_pan.getText().toString().trim(), gender, et_health_id.getText().toString().trim());
-            }else {
+            } else {
                 showMessage("Enter Health ID Card");
             }
         });
@@ -236,7 +237,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         TextView up_date = sheetView.findViewById(R.id.up_date_card);
         EditText up_mobile = sheetView.findViewById(R.id.up_mobile_card);
         RadioGroup up_gender = sheetView.findViewById(R.id.up_gender);
-        EditText up_health_id=sheetView.findViewById(R.id.up_health_id);
+        EditText up_health_id = sheetView.findViewById(R.id.up_health_id);
         // RadioButton mail=sheetView.findViewById(R.id.male);
         //  RadioButton female=sheetView.findViewById(R.id.female);
 
@@ -274,7 +275,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
     }
 
 
-    public void SaveHealthData(String name, String dob, String mobile, String gender1,String healthcardid) {
+    public void SaveHealthData(String name, String dob, String mobile, String gender1, String healthcardid) {
         showLoading();
 
         JsonObject object = new JsonObject();
@@ -285,7 +286,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
 
         object.addProperty("Mobile", mobile);
         object.addProperty("Gender", gender1);
-        object.addProperty("CardNo",healthcardid);
+        object.addProperty("CardNo", healthcardid);
         Call<ResponseSaveHealth> call = apiServices.SaveHealthCardDetails(object);
         call.enqueue(new Callback<ResponseSaveHealth>() {
             @Override
@@ -365,6 +366,8 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
     PickImageDialog dialog;
 
     void showDialog() {
+
+        aadharimg = false;
         PickSetup pickSetup = new PickSetup();
         pickSetup.setTitle("Select Image");
         pickSetup.setPickTypes(EPickType.GALLERY, EPickType.CAMERA);
@@ -410,7 +413,12 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
                                 Environment.DIRECTORY_PICTURES).getAbsolutePath())
                         .build()
                         .compressToFile(homeWorkFile);
-                uploadHealthCardImg();
+                if (aadharimg) {
+                    setPagerAdapter();
+                    uplodeaadharimage();
+
+                } else
+                    uploadHealthCardImg();
                 //uploadProfilePic();
                 //uploadeDocument();
                 /// Toast                               .makeText(context, result.getUri()+"", Toast.LENGTH_SHORT).show();
@@ -418,29 +426,31 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
             }
         }
-           else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-                CropImage.ActivityResult result1 = CropImage.getActivityResult(data);
-                if (resultCode == RESULT_OK) {
+/*
+        else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result1 = CropImage.getActivityResult(data);
+            if (resultCode == RESULT_OK) {
 
-                    homeWorkFile = FileUtils.getFile(context, result1.getUri());
-                    compressedImageFile = new Compressor.Builder(this)
-                            .setMaxWidth(800)
-                            .setMaxHeight(640)
-                            .setQuality(100)
-                            .setCompressFormat(Bitmap.CompressFormat.WEBP)
-                            .setDestinationDirectoryPath(Environment.getExternalStoragePublicDirectory(
-                                    Environment.DIRECTORY_PICTURES).getAbsolutePath())
-                            .build()
-                            .compressToFile(homeWorkFile);
-                    uplodeaadharimage();
-                    Log.e("ADDRESS File ", homeWorkFile.toString());
-                } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                homeWorkFile = FileUtils.getFile(context, result1.getUri());
+                compressedImageFile = new Compressor.Builder(this)
+                        .setMaxWidth(800)
+                        .setMaxHeight(640)
+                        .setQuality(100)
+                        .setCompressFormat(Bitmap.CompressFormat.WEBP)
+                        .setDestinationDirectoryPath(Environment.getExternalStoragePublicDirectory(
+                                Environment.DIRECTORY_PICTURES).getAbsolutePath())
+                        .build()
+                        .compressToFile(homeWorkFile);
+                uplodeaadharimage();
+                Log.e("ADDRESS File ", homeWorkFile.toString());
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
 //                        Exception error = result.getError();
-                }
             }
-
-
         }
+*/
+
+
+    }
 
 
     //Get Health Card Data
@@ -466,15 +476,14 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
                     Glide.with(context).load(response.body().getQrImage()).into(imgQr);
                     healthcardid = response.body().getPKCardId();
 
-                   // Toast.makeText(CardActivityAdd.this, healthcardid+"", Toast.LENGTH_SHORT).show();
+                    // Toast.makeText(CardActivityAdd.this, healthcardid+"", Toast.LENGTH_SHORT).show();
                     cardname = response.body().getName();
                     cardmobile = response.body().getMobile();
                     carddob = response.body().getDob();
 
                     //  tvBarth.setText(response.body().getD);
 
-                }
-                else healthcardid=response.body().getPKCardId();
+                } else healthcardid = response.body().getPKCardId();
             }
 
             @Override
@@ -538,7 +547,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         EditText et_pan_name = sheetView.findViewById(R.id.et_name_pan);
         TextView tv_start_date = sheetView.findViewById(R.id.tv_start_date);
         // tv1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/mangal.ttf"));
-        EditText et_pan_number=sheetView.findViewById(R.id.et_pan_number);
+        EditText et_pan_number = sheetView.findViewById(R.id.et_pan_number);
 
         Button btn_submit_pan = sheetView.findViewById(R.id.btn_submit_pan);
         Button btn_cancel_pan = sheetView.findViewById(R.id.btn_cancel_pan);
@@ -554,11 +563,10 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
 
         btn_submit_pan.setOnClickListener(v -> {
             dialogPanCard.dismiss();
-            if (et_pan_number.getText().toString().length() == 10)
-            {
+            if (et_pan_number.getText().toString().length() == 10) {
                 SavePanCardData(et_pan_name.getText().toString().trim(),
                         tv_start_date.getText().toString().trim(), et_pan_number.getText().toString().trim());
-        }else {
+            } else {
                 showMessage("Enter Pan Number");
             }
         });
@@ -605,7 +613,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         dialogUpdatePanCard.show();
     }
 
-    private void SavePanCardData(String name, String date,String pan_number) {
+    private void SavePanCardData(String name, String date, String pan_number) {
         showLoading();
 
         JsonObject object = new JsonObject();
@@ -613,7 +621,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         object.addProperty("FK_UserId", PreferencesManager.getInstance(context).getPk_userId());
         object.addProperty("Name", name);
         object.addProperty("DOB", date);
-        object.addProperty("PanNo",pan_number);
+        object.addProperty("PanNo", pan_number);
         object.addProperty("Mobile", "");
         object.addProperty("Gender", "");
         object.addProperty("NameH", "");
@@ -704,12 +712,11 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
                     panname = response.body().getName();
                     pandate = response.body().getDob();
                     showMessage(response.body().getMessage());
-                    Toast.makeText(CardActivityAdd.this, pancardid+"", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CardActivityAdd.this, pancardid + "", Toast.LENGTH_SHORT).show();
 
                     //  tvBarth.setText(response.body().getD);
 
-                }else
-                {
+                } else {
                     pancardid = response.body().getPKCardId();
 
                 }
@@ -744,11 +751,11 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         EditText etEmail_adhar = sheetView.findViewById(R.id.etEmail_adhar);
         RadioGroup rg_gender_adhar = sheetView.findViewById(R.id.rg_gender_adhar);
         EditText etDisticAdhar = sheetView.findViewById(R.id.etDisticAdhar);
-        EditText etPinCode=sheetView.findViewById(R.id.etPinCode);
-        EditText et_haddressname=sheetView.findViewById(R.id.et_haddressname);
-        EditText et_hname=sheetView.findViewById(R.id.et_hname);
-        EditText et_hFname=sheetView.findViewById(R.id.et_hFname);
-        EditText et_adhar_number=sheetView.findViewById(R.id.et_adhar_number);
+        EditText etPinCode = sheetView.findViewById(R.id.etPinCode);
+        EditText et_haddressname = sheetView.findViewById(R.id.et_haddressname);
+        EditText et_hname = sheetView.findViewById(R.id.et_hname);
+        EditText et_hFname = sheetView.findViewById(R.id.et_hFname);
+        EditText et_adhar_number = sheetView.findViewById(R.id.et_adhar_number);
         // RadioButton mail=sheetView.findViewById(R.id.male);
         //  RadioButton female=sheetView.findViewById(R.id.female);
 
@@ -772,11 +779,11 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
 
         btn_saveAddhar.setOnClickListener(v -> {
             dialogSaveAadharCard.dismiss();
-            if (et_adhar_number.getText().toString().length()==12) {
+            if (et_adhar_number.getText().toString().length() == 12) {
                 SaveAadahrData(et_name_aadhar.getText().toString().trim(),
                         et_father_name.getText().toString().trim(), et_adhar_mobile.getText().toString().trim(), tv_adhar_dob.getText().toString().trim(),
-                        etEmail_adhar.getText().toString().trim(), etAddress_Adhar.getText().toString().trim(), etDisticAdhar.getText().toString().trim(), gender, etPinCode.getText().toString().trim(), et_hname.getText().toString().trim(), et_hFname.getText().toString().trim(), et_haddressname.getText().toString().trim(),et_adhar_number.getText().toString().trim());
-            }else {
+                        etEmail_adhar.getText().toString().trim(), etAddress_Adhar.getText().toString().trim(), etDisticAdhar.getText().toString().trim(), gender, etPinCode.getText().toString().trim(), et_hname.getText().toString().trim(), et_hFname.getText().toString().trim(), et_haddressname.getText().toString().trim(), et_adhar_number.getText().toString().trim());
+            } else {
                 showMessage("Enter Aadhar Number");
             }
         });
@@ -787,7 +794,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         dialogSaveAadharCard.show();
     }
 
-    private void SaveAadahrData(String Aname, String AFname, String Amobile, String Adob, String Aemail, String AAdress, String ADistic, String Agender,String pincode,String hname,String hFname,String haddress,String AdharNumber) {
+    private void SaveAadahrData(String Aname, String AFname, String Amobile, String Adob, String Aemail, String AAdress, String ADistic, String Agender, String pincode, String hname, String hFname, String haddress, String AdharNumber) {
         JsonObject object = new JsonObject();
 
         object.addProperty("FK_UserId", PreferencesManager.getInstance(context).getPk_userId());
@@ -798,11 +805,11 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         object.addProperty("Email", Aemail);
         object.addProperty("Address", AAdress);
         object.addProperty("Name", Aname);
-        object.addProperty("PinCode",pincode);
-        object.addProperty("NameH",hname);
-        object.addProperty("FatherNameH",hFname);
-        object.addProperty("AddressH",haddress);
-         object.addProperty("AdharNo",AdharNumber);
+        object.addProperty("PinCode", pincode);
+        object.addProperty("NameH", hname);
+        object.addProperty("FatherNameH", hFname);
+        object.addProperty("AddressH", haddress);
+        object.addProperty("AdharNo", AdharNumber);
 
         Call<ResponseStatusMessage> call = apiServices.SaveAdharCardDetails(object);
         call.enqueue(new Callback<ResponseStatusMessage>() {
@@ -835,8 +842,8 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
        /* dialogHealthCard = new BottomSheetDialog(context);
         View sheetView = context.getLayoutInflater().inflate(R.layout.dialog_health_card, null);
         dialogHealthCard.setContentView(sheetView);*/
-        EditText up_adhar_no=sheetView.findViewById(R.id.up_adhar_no);
-        ImageView img_member=sheetView.findViewById(R.id.img_member);
+        EditText up_adhar_no = sheetView.findViewById(R.id.up_adhar_no);
+        ImageView img_member = sheetView.findViewById(R.id.img_member);
         EditText up_name_aadhar = sheetView.findViewById(R.id.up_name_aadhar);
         EditText up_father_name = sheetView.findViewById(R.id.upFathernameAdhar);
         TextView up_adhar_dob = sheetView.findViewById(R.id.up_adhar_dob);
@@ -844,11 +851,11 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         EditText upAddress_Adhar = sheetView.findViewById(R.id.upAddress_Adhar);
         EditText upEmail_adhar = sheetView.findViewById(R.id.upEmail_adhar);
         EditText upDisticAdhar = sheetView.findViewById(R.id.upDisticAdhar);
-        EditText upPinCode=sheetView.findViewById(R.id.PinCode);
-        EditText up_haddressname=sheetView.findViewById(R.id.up_haddressname);
-        EditText up_hname=sheetView.findViewById(R.id.up_hname);
-        EditText up_hFname=sheetView.findViewById(R.id.up_hFname);
-        RadioGroup rg_gender_adhar_update=sheetView.findViewById(R.id.rg_gender_adhar_update);
+        EditText upPinCode = sheetView.findViewById(R.id.PinCode);
+        EditText up_haddressname = sheetView.findViewById(R.id.up_haddressname);
+        EditText up_hname = sheetView.findViewById(R.id.up_hname);
+        EditText up_hFname = sheetView.findViewById(R.id.up_hFname);
+        RadioGroup rg_gender_adhar_update = sheetView.findViewById(R.id.rg_gender_adhar_update);
         up_father_name.setText(afname);
         up_adhar_mobile.setText(amobile);
         up_name_aadhar.setText(aname);
@@ -858,7 +865,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         up_hFname.setText(fname);
         up_hname.setText(hname);
         up_haddressname.setText(haddress);
-       // up_adhar_no.setText();
+        // up_adhar_no.setText();
         Button btn_addar_cancle_update = sheetView.findViewById(R.id.btn_addar_cancle_update);
         Button btn_updateAddhar = sheetView.findViewById(R.id.btn_updateAddhar);
         rg_gender_adhar_update.setOnCheckedChangeListener((group, checkedId) -> {
@@ -872,7 +879,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
             @Override
             public void onClick(View view) {
                 //choosePhoto = new ChoosePhoto(context);
-               showDialog();
+                showDialog();
             }
         });
         up_adhar_dob.setOnClickListener(v -> {
@@ -887,7 +894,7 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
             dialogUpdateAdharCard.dismiss();
             UpdateAadahrData(up_name_aadhar.getText().toString().trim(),
                     up_father_name.getText().toString().trim(), up_adhar_mobile.getText().toString().trim(), up_adhar_dob.getText().toString().trim(),
-                    upEmail_adhar.getText().toString().trim(), upAddress_Adhar.getText().toString().trim(), upPinCode.getText().toString().trim(),up_adhar_no.getText().toString().trim(),up_hname.getText().toString().trim(),up_hFname.getText().toString().trim(),up_haddressname.getText().toString().trim(),genderadahr);
+                    upEmail_adhar.getText().toString().trim(), upAddress_Adhar.getText().toString().trim(), upPinCode.getText().toString().trim(), up_adhar_no.getText().toString().trim(), up_hname.getText().toString().trim(), up_hFname.getText().toString().trim(), up_haddressname.getText().toString().trim(), genderadahr);
         });
 
 
@@ -896,8 +903,8 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         dialogUpdateAdharCard.show();
     }
 
-    private void UpdateAadahrData(String Aname, String AFname, String Amobile, String Adob, String Aemail, String AAdress, String ADistic,String adharnumber,String hname,String Fname,String
-                                  haddress,String genderadahr) {
+    private void UpdateAadahrData(String Aname, String AFname, String Amobile, String Adob, String Aemail, String AAdress, String ADistic, String adharnumber, String hname, String Fname, String
+            haddress, String genderadahr) {
         JsonObject object = new JsonObject();
 
         object.addProperty("FK_UserId", PreferencesManager.getInstance(context).getPk_userId());
@@ -909,10 +916,10 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         object.addProperty("Name", Aname);
         object.addProperty("PK_CardId", pk_adarid);
         object.addProperty("AdharNo", adharnumber);
-        object.addProperty("NameH",hname);
-        object.addProperty("FatherNameH",Fname);
-        object.addProperty("AddressH",haddress);
-        object.addProperty("Gender",genderadahr);
+        object.addProperty("NameH", hname);
+        object.addProperty("FatherNameH", Fname);
+        object.addProperty("AddressH", haddress);
+        object.addProperty("Gender", genderadahr);
         // object.addProperty("Name",Aname);
 
         Call<ResponseStatusMessage> call = apiServices.UpdateAdharCardDetails(object);
@@ -952,18 +959,17 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
                 if (response.body().getStatusCode().equalsIgnoreCase("200")) {
 
                     pk_adarid = response.body().getPKCardId();
-                    aname=response.body().getName();
-                    afname=response.body().getFatherName();
-                    aaddress=response.body().getAddress();
-                    adob=response.body().getDob();
-                    aemail=response.body().getEmail();
-                    haddress=response.body().getAddressH();
-                    hname=response.body().getNameH();
-                    fname=response.body().getFatherNameH();
+                    aname = response.body().getName();
+                    afname = response.body().getFatherName();
+                    aaddress = response.body().getAddress();
+                    adob = response.body().getDob();
+                    aemail = response.body().getEmail();
+                    haddress = response.body().getAddressH();
+                    hname = response.body().getNameH();
+                    fname = response.body().getFatherNameH();
 
-                }else
+                } else
                     pk_adarid = response.body().getPKCardId();
-
 
 
             }
@@ -975,30 +981,31 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
         });
 
     }
+
     private void uplodeaadharimage() {
         LoggerUtil.logItem(compressedImageFile.length());
         LoggerUtil.logItem(homeWorkFile.length());
-       // showLoading();
+        // showLoading();
         RequestBody requestBody;
         MultipartBody.Part body = null;
         requestBody = RequestBody.create(MediaType.parse("image/*"), homeWorkFile);
         body = MultipartBody.Part.createFormData("Photo", homeWorkFile.getName(), requestBody);
         RequestBody userId = RequestBody.create(MediaType.parse("text/plain"), PreferencesManager.getInstance(context).getPk_userId());
         RequestBody pk_cardId = RequestBody.create(MediaType.parse("text/plain"), pk_adarid);
-
+        Log.e("TAG", "uplodeaadharimage: " + pk_adarid);
         //RequestBody adharnumber = RequestBody.create(MediaType.parse("text/plain"), tvAdharNumber.getText().toString().trim());
         Call<ResponseStatusMessage> call = apiServices.uploadHealthImage(userId, pk_cardId, body);
         call.enqueue(new Callback<ResponseStatusMessage>() {
             @Override
             public void onResponse(Call<ResponseStatusMessage> call, Response<ResponseStatusMessage> response) {
-               // hideLoading();
+                // hideLoading();
                 LoggerUtil.logItem(response.body());
                 try {
                     if (response.body().getStatusCode().equalsIgnoreCase("200")) {
                         // hideLoading();
                         showMessage(response.body().getMessage());
                         LoggerUtil.logItem(response.body());
-                       // getHealthCard();
+                        // getHealthCard();
                         getData();
 
                     } else showMessage(response.body().getMessage());
@@ -1012,24 +1019,24 @@ public class CardActivityAdd extends BaseActivity implements IPickCancel, IPickR
             @Override
             public void onFailure(Call<ResponseStatusMessage> call, Throwable t) {
                 LoggerUtil.logItem(t.getMessage());
-               // hideLoading();
+                // hideLoading();
             }
         });
     }
-private void showcamera()
-{
-    PickSetup pickSetup = new PickSetup();
-    pickSetup.setTitle("Select Image");
-    pickSetup.setPickTypes(EPickType.GALLERY, EPickType.CAMERA);
-    pickSetup.setGalleryIcon(com.vansuita.pickimage.R.mipmap.gallery_colored);
-    pickSetup.setCameraIcon(com.vansuita.pickimage.R.mipmap.camera_colored);
-    pickSetup.setCancelTextColor(R.color.colorAccent);
-    // If show system dialog..
+
+    private void showcamera() {
+        PickSetup pickSetup = new PickSetup();
+        pickSetup.setTitle("Select Image");
+        pickSetup.setPickTypes(EPickType.GALLERY, EPickType.CAMERA);
+        pickSetup.setGalleryIcon(com.vansuita.pickimage.R.mipmap.gallery_colored);
+        pickSetup.setCameraIcon(com.vansuita.pickimage.R.mipmap.camera_colored);
+        pickSetup.setCancelTextColor(R.color.colorAccent);
+        // If show system dialog..
 //        pickSetup.setSystemDialog(true);
 
-    dialog = PickImageDialog.build(pickSetup);
-    dialog.setOnPickCancel(this);
-    dialog.show(getSupportFragmentManager());
-}
+        dialog = PickImageDialog.build(pickSetup);
+        dialog.setOnPickCancel(this);
+        dialog.show(getSupportFragmentManager());
+    }
 
 }

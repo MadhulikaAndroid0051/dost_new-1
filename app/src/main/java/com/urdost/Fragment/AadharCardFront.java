@@ -19,6 +19,7 @@ import com.bumptech.glide.Glide;
 import com.google.gson.JsonObject;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
+import com.urdost.Activity.CardActivityAdd;
 import com.urdost.R;
 import com.urdost.app.PreferencesManager;
 import com.urdost.common.FileUtils;
@@ -73,13 +74,14 @@ public class AadharCardFront extends BaseFragment implements IPickCancel, IPickR
     @BindView(R.id.cv_adhar_card)
     CardView cvAdharCard;
     private String aadahrpk_id;
+    String TAG="AadharCardFront";
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.aadhar_front, container, false);
         unbinder = ButterKnife.bind(this, view);
         new Handler().postDelayed(() -> {
-            getData();
+            getData123();
 
         }, 100);
         return view;
@@ -94,6 +96,7 @@ public class AadharCardFront extends BaseFragment implements IPickCancel, IPickR
     PickImageDialog dialog;
 
     void showDialog() {
+        CardActivityAdd.aadharimg=true;
         PickSetup pickSetup = new PickSetup();
         pickSetup.setTitle("Select Image");
         pickSetup.setPickTypes(EPickType.GALLERY, EPickType.CAMERA);
@@ -112,7 +115,7 @@ public class AadharCardFront extends BaseFragment implements IPickCancel, IPickR
 
     @Override
     public void onPickResult(PickResult pickResult) {
-        Log.e("RESULT", "= " + pickResult.getPath());
+        Log.e("RESULT_fragment", "= " + pickResult.getPath());
         if (pickResult.getError() == null) {
             CropImage.activity(pickResult.getUri()).setCropShape(CropImageView.CropShape.RECTANGLE)
                     .start(context);
@@ -143,7 +146,7 @@ public class AadharCardFront extends BaseFragment implements IPickCancel, IPickR
                 uplodeimage();                //uploadProfilePic();
                 //uploadeDocument();
                 /// Toast                               .makeText(context, result.getUri()+"", Toast.LENGTH_SHORT).show();
-                Log.e("ADDRESS File ", homeWorkFile.toString());
+                Log.e("ADDRESSFileRESULTfrag", homeWorkFile.toString());
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
             }
 
@@ -153,9 +156,10 @@ public class AadharCardFront extends BaseFragment implements IPickCancel, IPickR
 
     @OnClick(R.id.img_adhar_profile)
     public void onClick() {
+        Log.e("ADDRESSFileRESULTfrag", "clicked");
         showDialog();
     }
-    private void getData() {
+    private void getData123() {
         // showLoading();
 
         JsonObject object = new JsonObject();
@@ -176,6 +180,7 @@ public class AadharCardFront extends BaseFragment implements IPickCancel, IPickR
                     aadahrpk_id=response.body().getPKCardId();
                     Glide.with(context).load(response.body().getPhoto()).into(imgAdharProfile);
                     Glide.with(context).load(response.body().getQrImage()).into(imgeAdhar);
+                    Log.e(TAG, "onResponse: "+aadahrpk_id);
                  //   Toast.makeText(context, aadahrpk_id+"", Toast.LENGTH_SHORT).show();
 
                     //  tvBarth.setText(response.body().getD);
@@ -201,7 +206,7 @@ public class AadharCardFront extends BaseFragment implements IPickCancel, IPickR
         RequestBody userId = RequestBody.create(MediaType.parse("text/plain"), PreferencesManager.getInstance(context).getPk_userId());
         RequestBody pk_cardId = RequestBody.create(MediaType.parse("text/plain"), aadahrpk_id);
 
-        //RequestBody adharnumber = RequestBody.create(MediaType.parse("text/plain"), tvAdharNumber.getText().toString().trim());
+        RequestBody adharnumber = RequestBody.create(MediaType.parse("text/plain"), tvAdharNumber.getText().toString().trim());
         Call<ResponseStatusMessage> call = apiServices.uploadHealthImage(userId, pk_cardId, body);
         call.enqueue(new Callback<ResponseStatusMessage>() {
             @Override
@@ -214,6 +219,7 @@ public class AadharCardFront extends BaseFragment implements IPickCancel, IPickR
                         showMessage(response.body().getMessage());
                         LoggerUtil.logItem(response.body());
                         // getHealthCard();
+
 
                     } else showMessage(response.body().getMessage());
 

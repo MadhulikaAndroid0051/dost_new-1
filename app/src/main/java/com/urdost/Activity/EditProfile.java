@@ -130,10 +130,11 @@ public class EditProfile extends BaseActivity  implements IPickCancel, IPickResu
                 onBackPressed();
                 break;
             case R.id.img:
-                break;
-            case R.id.img_member:
                 showDialog();
                 break;
+           /* case R.id.img_member:
+                showDialog();
+                break;*/
             case R.id.btn_update:
                 getUpdateProfile();
 
@@ -155,7 +156,9 @@ public class EditProfile extends BaseActivity  implements IPickCancel, IPickResu
                 try {
                     LoggerUtil.logItem(response.body());
                     if (response.body().getStatusCode().equalsIgnoreCase("200")) {
-                        Glide.with(context).load(response.body().getLstViewProfile().getProfilePicture()).into(img);
+                        Glide.with(context).load(response.body().getLstViewProfile().getProfilePicture()).placeholder(
+                                R.drawable.digi_logo
+                        ).error(R.drawable.ic_icon__2_07).into(img);
                         tvSpillId.setText(response.body().getLstViewProfile().getSponsorId());
                         tvSpillName.setText(response.body().getLstViewProfile().getSponsorName());
                         tvName.setText(response.body().getLstViewProfile().getFirstName());

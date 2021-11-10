@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/drawable/grey_bg_square.xml" value="0.2625" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/drawable/ic_upper_bg.xml" value="0.2171875" />
         <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/aadhar_back.xml" value="0.24791666666666667" />
         <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/aadhar_front.xml" value="0.24791666666666667" />
         <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/action_bar.xml" value="0.24791666666666667" />
@@ -19,6 +21,7 @@
         <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/health_id.xml" value="0.33" />
         <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/login_activity.xml" value="0.18" />
         <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/new_main_activity.xml" value="0.23229166666666667" />
+        <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/new_mlm_dashboard.xml" value="0.25" />
         <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/set_action.xml" value="0.19264069264069264" />
         <entry key="..\:/Vikram Android/Dost/Dost/dost_new/app/src/main/res/layout/set_nfc_profile.xml" value="0.19166666666666668" />
       </map>

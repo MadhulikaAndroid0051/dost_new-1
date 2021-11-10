@@ -59,8 +59,8 @@ public class ResallerZone extends BaseFragment {
     ImageView imgCard;
     @BindView(R.id.constraintLayout)
     ConstraintLayout constraintLayout;
-    @BindView(R.id.tv_user_mobile)
-    TextView tvUserMobile;
+    @BindView(R.id.tv_user_status)
+    TextView tvUserStatus;
     @BindView(R.id.textView10)
     TextView textView10;
     @BindView(R.id.view2)
@@ -262,6 +262,10 @@ public class ResallerZone extends BaseFragment {
         if (NetworkUtils.getConnectivityStatus(context) != 0) {
             getData();
         } else showMessage(R.string.alert_internet);
+
+
+
+
         return view;
     }
 
@@ -280,10 +284,10 @@ public class ResallerZone extends BaseFragment {
                 try {
                     LoggerUtil.logItem(response.body());
                     if (response.body().getStatusCode().equalsIgnoreCase("200")) {
-                        tvUserId.setText(response.body().getUserId());
+                        tvUserId.setText(response.body().getUserId() +" Mno. "+response.body().getMobileNo());
                         tvDoj.setText(response.body().getDoj());
                         tvDoa.setText(response.body().getDoa());
-                        tvUserMobile.setText(response.body().getMobileNo());
+                        tvUserStatus.setText("My Status");
                         tvLastLogin.setText(response.body().getLastLogin());
                         tvUnclearBal.setText(response.body().getTotalPayout());
                         tvTeamSize.setText(response.body().getTotalTeam());

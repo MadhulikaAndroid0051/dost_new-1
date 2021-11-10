@@ -85,9 +85,9 @@ public class SplashScreen extends BaseActivity {
                     }
                 });
         new Handler().postDelayed(() -> {
-            if (checkForSuBinary() || checkForBusyBoxBinary() || checkSuExists()) {
+            /*if (checkForSuBinary() || checkForBusyBoxBinary() || checkSuExists()) {
                 createExitDialog(context, "Rooted Device", "This device is rooted. You can't use this app.", true);
-            } else
+            } else*/
                 {
                 if (NetworkUtils.getConnectivityStatus(context) != 0) {
                     checkUpdate();

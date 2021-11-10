@@ -43,10 +43,9 @@ public class AdapterDashboardMenuItems extends RecyclerView.Adapter<AdapterDashb
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int listPosition) {
         if (list.get(listPosition).getPKSubCategoryId().equalsIgnoreCase("1")) {
-           holder.androidGridviewText.setVisibility(View.GONE);
-        }
-        else
-        holder.androidGridviewText.setVisibility(View.VISIBLE);
+            holder.androidGridviewText.setVisibility(View.GONE);
+        } else
+            holder.androidGridviewText.setVisibility(View.VISIBLE);
         holder.androidGridviewText.setText(list.get(listPosition).getName());
         Glide.with(mContext).load(list.get(listPosition).getImage())
                 .apply(RequestOptions.circleCropTransform().placeholder(R.drawable.digi_logo)

@@ -405,7 +405,6 @@ public class Utils {
 
         Pattern pattern = Pattern.compile("[A-Z]{5}[0-9]{4}[A-Z]");
         Matcher matcher = pattern.matcher(panNo);
-
         return matcher.matches();
     }
 

@@ -1,6 +1,6 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="150dp"
+    android:layout_width="@dimen/_150sdp"
     android:layout_height="wrap_content"
     app:cardCornerRadius="4dp"
     android:layout_margin="8dp"
@@ -11,7 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/productContent"
-        android:layout_width="150dp"
+        android:layout_width="@dimen/_150sdp"
         android:background="@color/colorPrimarylight"
         android:layout_height="wrap_content"
         android:orientation="vertical">

@@ -7,12 +7,10 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="@dimen/_300sdp"
-        android:layout_height="@dimen/_138sdp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img_card" />
+        app:srcCompat="@drawable/img_card"
+        tools:layout_editor_absoluteY="35dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -118,7 +118,7 @@ public class NewContainerActivity extends BaseActivity {
         imgSideMenu.setOnClickListener(v -> {
             PopupMenu popupDis = new PopupMenu(context, imgSideMenu);
             popupDis.getMenuInflater().inflate(R.menu.menu_profile, popupDis.getMenu());
-            if (PreferencesManager.getInstance(context).getServicetype().equalsIgnoreCase("True")) {
+            if(PreferencesManager.getInstance(context).getServicetype().equalsIgnoreCase("True")) {
                 // popupDis.getMenu().getItem(1).setVisible(true);
             } else {
                 //popupDis.getMenu().getItem(1).setVisible(false);
@@ -155,7 +155,7 @@ public class NewContainerActivity extends BaseActivity {
         switch (item.getItemId()) {
             case R.id.navigation_home:
                 if (!(currentFragment instanceof MainDashboard))
-                    replaceFragment(new MainDashboard(),"Hii"+", " +PreferencesManager.getInstance(context).getFullname());
+                    replaceFragment(new MainDashboard(),"Hii"+", "+PreferencesManager.getInstance(context).getFullname());
 
                 return true;
             case R.id.navigation_business:

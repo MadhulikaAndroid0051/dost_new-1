@@ -363,7 +363,1325 @@
                 android:paddingTop="4dp"
                 android:paddingBottom="8dp" />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_2sdp"
+                >
 
+
+<!--
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/border_black_stroke"
+                    android:id="@+id/linear_layout1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recharge and bill payments"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0" />
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:columnCount="4"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView18">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Mobile\nRecharge"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="2">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory1"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Rent on\n Credit Card"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory1"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory1"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory1" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+                            android:layout_columnWeight="3">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory2"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Book Gas\n Cyclinder"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory2"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory2"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory2" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="4">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory3"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Electricity \n Bill"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory3"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory3"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory3" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory4"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Dth \n Recharge"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory4"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory4"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory4" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="2">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory5"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Broadband \n Landline"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory5"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory5"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory5" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="3">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory6"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Credit Card\n Payment"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory6"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory6"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory6" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="4">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory7"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="View More"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory7"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory7"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory7" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </GridLayout>
+                </LinearLayout>
+-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/linear_layout1"
+                    android:background="@drawable/border_black_stroke"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textView1813"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nfc Devices"
+                        android:textAppearance="@style/TextFieldBold"
+
+                        android:textColor="#fff"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0" />
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:columnCount="4"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView1813">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory1114"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName1114"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Business\nTag"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory1114"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory1114"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory1114" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory114"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName114"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="  Animal \nTag"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory114"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory114"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory114" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory214"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName214"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text=" House  \nTags"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory214"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory214"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory214" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory314"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName314"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="  Shop  \nTag"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory314"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory314"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory314" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory414"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName414"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Monumnet\nTag"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory414"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory414"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory414" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory514"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName514"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Property\nTag"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory514"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory514"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory514" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory614"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName614"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Project \nTag"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory614"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory614"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory614" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory714"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName714"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:gravity="center"
+                                android:text="  View  \n More"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory714"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory714"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory714" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </GridLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/linear_layout2"
+                    android:background="@drawable/border_black_stroke"
+                    app:layout_constraintTop_toBottomOf="@+id/linear_layout1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textView181"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nfc Devices"
+                        android:textAppearance="@style/TextFieldBold"
+                        android:textStyle="bold"
+
+                        android:textColor="#fff"
+                        android:textSize="18sp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0" />
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:columnCount="4"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView18">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory111"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName111"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Business\nTag"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory111"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory111"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory111" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory11"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName11"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Animal\nTag"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory11"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory11"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory11" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory21"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName21"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="House \nTags"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory21"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory21"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory21" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory31"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName31"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Shop  \nTag"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory31"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory31"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory31" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory41"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName41"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Monunet\n Tag"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory41"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory41"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory41" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory51"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName51"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Property \n Tag"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory51"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory51"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory51" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory61"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName61"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Project\n Tag"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory61"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory61"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory61" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnSpan="1"
+
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory71"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName71"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:textAlignment="center"
+                                android:text="View\nMore"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory71"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory71"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory71" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </GridLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/border_black_stroke"
+                    app:layout_constraintTop_toBottomOf="@+id/linear_layout2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textView1812"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ott Plateforms"
+                        android:textAppearance="@style/TextFieldBold"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:textColor="#fff"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0" />
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:columnCount="4"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView18">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory1112"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName1112"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Netflix "
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory1112"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory1112"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory1112" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory112"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName112"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Disney+\nHotstar"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory112"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory112"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory112" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory212"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName212"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Amazon \nPrime"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory212"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory212"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory212" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory312"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName312"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Sony \nliv"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory312"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory312"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory312" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory412"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName412"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="Zee5"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory412"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory412"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory412" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory512"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName512"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="MX Player"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory512"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory512"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory512" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory612"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName612"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:text="ALTBalaji"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory612"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory612"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory612" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1">
+
+
+                            <ImageView
+                                android:id="@+id/imageViewCategory712"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/digi_logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_CategoryName712"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:maxLines="2"
+                                android:textAlignment="center"
+                                android:text="View\n More"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/imageViewCategory712"
+                                app:layout_constraintStart_toStartOf="@+id/imageViewCategory712"
+                                app:layout_constraintTop_toBottomOf="@+id/imageViewCategory712" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </GridLayout>
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_dashboard_menu"
                 android:layout_width="match_parent"

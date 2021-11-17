@@ -1,23 +1,39 @@
 package com.urdost.Fragment;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.urdost.Activity.NewContainerActivity;
 import com.urdost.R;
+import com.urdost.common.LoggerUtil;
 import com.urdost.constants.BaseFragment;
+import com.urdost.model.response.ResponseGetSponseStatus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class TaskZone extends BaseFragment {
     Unbinder unbinder;
@@ -29,6 +45,7 @@ public class TaskZone extends BaseFragment {
     CardView cvCompleted;
     @BindView(R.id.cv_hold)
     CardView cvHold;
+     Dialog joinProgramDialog;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -46,7 +63,7 @@ public class TaskZone extends BaseFragment {
                 showMessage("Coming Soon");
                 break;
             case R.id.cv_onging:
-                showMessage("Coming Soon");
+                joinProgramDialog();
 
                 break;
             case R.id.cv_completed:
@@ -73,4 +90,16 @@ public class TaskZone extends BaseFragment {
         requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
 
     }
-}
+    void joinProgramDialog() {
+        joinProgramDialog = new Dialog(context);
+        joinProgramDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        joinProgramDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        joinProgramDialog.setContentView(R.layout.dialog_new_task);
+
+        Button btn_cancel = joinProgramDialog.findViewById(R.id.btn_cancel);
+
+        btn_cancel.setOnClickListener(v -> joinProgramDialog.cancel());
+    }
+
+
+    }

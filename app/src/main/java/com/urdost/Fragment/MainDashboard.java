@@ -91,11 +91,11 @@ public class MainDashboard extends BaseFragment implements EventDetailslistner, 
     @BindView(R.id.imageSlider)
     SliderView imageSlider;
 
-    @BindView(R.id.imageSlider1)
+  /*  @BindView(R.id.imageSlider1)
     SliderView imageSlider1;
 
     @BindView(R.id.imageSlider23)
-    SliderView imageSlider2;
+    SliderView imageSlider2;*/
 
     @BindView(R.id.tv_prime_text)
     TextView tvPrimeText;
@@ -221,13 +221,13 @@ public class MainDashboard extends BaseFragment implements EventDetailslistner, 
                     imageSlider.setAutoCycle(true);
                     imageSlider.startAutoCycle();
 
-                    imageSlider1.setSliderAdapter(adapterNewContainerBanner);
+                   /* imageSlider1.setSliderAdapter(adapterNewContainerBanner);
                     imageSlider1.setAutoCycle(true);
                     imageSlider1.startAutoCycle();
 
                     imageSlider2.setSliderAdapter(adapterNewContainerBanner);
                     imageSlider2.setAutoCycle(true);
-                    imageSlider2.startAutoCycle();
+                    imageSlider2.startAutoCycle();*/
                 } else showMessage(response.body().getMessage());
             }
 

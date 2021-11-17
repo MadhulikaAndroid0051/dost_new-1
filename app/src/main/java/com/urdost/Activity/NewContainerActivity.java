@@ -4,13 +4,16 @@ import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -35,6 +38,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 import com.urdost.Fragment.DistributorZone;
 import com.urdost.Fragment.MainDashboard;
 import com.urdost.Fragment.NFCEditProfile;
@@ -46,6 +51,7 @@ import com.urdost.Fragment.Scanner;
 import com.urdost.Fragment.TaskZone;
 import com.urdost.R;
 import com.urdost.app.PreferencesManager;
+import com.urdost.common.FileUtils;
 import com.urdost.common.LoggerUtil;
 import com.urdost.constants.BaseActivity;
 import com.urdost.model.ResponseStatusMessage;
@@ -58,15 +64,24 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.JsonObject;
+import com.vansuita.pickimage.bean.PickResult;
+import com.vansuita.pickimage.listeners.IPickCancel;
+import com.vansuita.pickimage.listeners.IPickResult;
+
+import java.io.File;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Setter;
+import id.zelory.compressor.Compressor;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NewContainerActivity extends BaseActivity {
+public class NewContainerActivity extends BaseActivity  {
 
 
     @BindView(R.id.img_side_menu)
@@ -547,4 +562,5 @@ public class NewContainerActivity extends BaseActivity {
         else
             goToActivity(context, Scanner.class, null);
     }
+
 }

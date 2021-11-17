@@ -58,10 +58,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_5sdp"
-        android:drawablePadding="@dimen/_5sdp"
         android:text="In Stock"
-        android:drawableLeft="@drawable/check_circle"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />

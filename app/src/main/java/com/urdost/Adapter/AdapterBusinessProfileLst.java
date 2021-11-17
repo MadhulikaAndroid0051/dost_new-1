@@ -50,7 +50,7 @@ public class AdapterBusinessProfileLst extends RecyclerView.Adapter<AdapterBusin
         holder.tvBusinessName.setVisibility(View.GONE);
         holder.textView28.setText("Profile Name");
         holder.textView29.setVisibility(View.GONE);
-        holder.tvEdit.setOnClickListener(v -> businessProfileId.getbusinessId(list.get(i).getPKProfileId(), list.get(i).getFKUserId()));
+        holder.tvEdit.setOnClickListener(v -> businessProfileId.getbusinessId(list.get(i).getPKProfileId(), list.get(i).getFKUserId(),list.get(i).getProfileNAme()));
 
 
         if (list.get(i).getIsActive()) {

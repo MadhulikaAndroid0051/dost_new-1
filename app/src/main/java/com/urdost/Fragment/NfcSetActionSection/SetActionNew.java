@@ -409,10 +409,11 @@ public class SetActionNew extends BaseFragment implements BusinessProfileId, Cha
     }
 
     @Override
-    public void getbusinessId(String Id, String pk_userid) {
+    public void getbusinessId(String Id, String pk_userid, String profilename) {
 
         Bundle  bundle=new Bundle();
         bundle.putString("Pk_profileId",Id);
+        bundle.putString("ProfileName",profilename);
         businessProfileId=Id;
         //   goToActivity(SetAction.class,bundle);
 
@@ -424,7 +425,7 @@ public class SetActionNew extends BaseFragment implements BusinessProfileId, Cha
                   //  upadetBusinessProfile(Id, pk_userid);
                 }
             });*/
-       EditBusinessProfile();
+        goToActivity(SetActionUpdateProfile.class,bundle);
         getBusinessProfileEdit(businessProfileId);
 
     }
@@ -630,4 +631,5 @@ public class SetActionNew extends BaseFragment implements BusinessProfileId, Cha
     public void onCancelClick() {
 
     }
- }
+
+   }

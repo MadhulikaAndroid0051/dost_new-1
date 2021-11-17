@@ -37,6 +37,7 @@ public class Password extends BaseActivity {
     Bundle bundle;
     @BindView(R.id.et_password)
     EditText etPassword;
+    String referId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,10 @@ public class Password extends BaseActivity {
         ButterKnife.bind(this);
 
         bundle = getIntent().getBundleExtra(PAYLOAD_BUNDLE);
+
+//        if (bundle.getString("Id") != null)
+        referId = bundle.getString("Id");
+
     }
 
 
@@ -64,6 +69,8 @@ public class Password extends BaseActivity {
             case R.id.tv_forgot_password:
                 Bundle bundle1 = new Bundle();
                 bundle1.putString("mobile", bundle.getString("mobile"));
+                bundle1.putString("Id", referId);
+
                 goToActivity(context, ForgotPassword.class, bundle1);
                 break;
         }
@@ -93,7 +100,11 @@ public class Password extends BaseActivity {
                     PreferencesManager.getInstance(context).setUserCode(response.body().getData().getUserCode());
                     PreferencesManager.getInstance(context).setDistrubuter(response.body().getData().getDistributor());
                     PreferencesManager.getInstance(context).setIsAcceptanceTNC(response.body().getData().getIsAcceptanceTNC());
-                    goToActivityWithFinish(context, NewContainerActivity.class, null);
+                    Bundle bundle1 = new Bundle();
+
+                    bundle1.putString("Id", referId);
+                    goToActivityWithFinish(context, NewContainerActivity.class, bundle1);
+
                 } else showMessage(response.body().getMessage());
             }
 

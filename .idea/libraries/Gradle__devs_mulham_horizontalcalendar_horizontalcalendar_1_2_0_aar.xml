@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0b72e232f52797e4243a83c914a74e1e/jetified-horizontalcalendar-1.2.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0b72e232f52797e4243a83c914a74e1e/jetified-horizontalcalendar-1.2.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0b72e232f52797e4243a83c914a74e1e/jetified-horizontalcalendar-1.2.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/af9920976551cfae5594d6a090f0181c/jetified-horizontalcalendar-1.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/af9920976551cfae5594d6a090f0181c/jetified-horizontalcalendar-1.2.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/af9920976551cfae5594d6a090f0181c/jetified-horizontalcalendar-1.2.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/devs.mulham.horizontalcalendar/horizontalcalendar/1.2.0/a4f09ae18cfa84134647b3c82b6a3d21eaa5ac3b/horizontalcalendar-1.2.0-javadoc.jar!/" />

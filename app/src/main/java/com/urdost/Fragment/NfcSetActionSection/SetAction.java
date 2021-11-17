@@ -608,39 +608,6 @@ public class SetAction extends BaseFragment implements BusinessProfileId, Chackb
         });
     }
 
-    @Override
-    public void getbusinessId(String Id, String pk_userid) {
-
-        Bundle  bundle=new Bundle();
-        bundle.putString("Pk_profileId",Id);
-        businessProfileId=Id;
-        //   goToActivity(SetAction.class,bundle);
-
-        //  Toast.makeText(context,pk_profileid+"", Toast.LENGTH_SHORT).show();
-        if (layoutProfileSave.getVisibility() == View.GONE) {
-            layoutProfileSave.setVisibility(View.VISIBLE);
-
-            btnBusinessUpdate.setVisibility(View.VISIBLE);
-            btnBusinessSave.setVisibility(View.GONE);
-
-            layoutProfileName.setVisibility(View.GONE);
-            layoutbtn.setVisibility(View.VISIBLE);
-
-            getBusinessProfileEdit(Id);
-            btnBusinessUpdate.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    upadetBusinessProfile(Id, pk_userid);
-                }
-            });
-        } else {
-            layoutProfileSave.setVisibility(View.GONE);
-
-
-        }
-
-
-    }
 
     @Override
     public void getBusinessprofilecheckbox(String Id, Boolean checkbox) {
@@ -2140,5 +2107,38 @@ public class SetAction extends BaseFragment implements BusinessProfileId, Chackb
                 hideLoading();
             }
         });
+    }
+
+    @Override
+    public void getbusinessId(String Id, String pk_userid, String profileName) {
+        Bundle  bundle=new Bundle();
+        bundle.putString("Pk_profileId",Id);
+        businessProfileId=Id;
+        //   goToActivity(SetAction.class,bundle);
+
+        //  Toast.makeText(context,pk_profileid+"", Toast.LENGTH_SHORT).show();
+        if (layoutProfileSave.getVisibility() == View.GONE) {
+            layoutProfileSave.setVisibility(View.VISIBLE);
+
+            btnBusinessUpdate.setVisibility(View.VISIBLE);
+            btnBusinessSave.setVisibility(View.GONE);
+
+            layoutProfileName.setVisibility(View.GONE);
+            layoutbtn.setVisibility(View.VISIBLE);
+
+            getBusinessProfileEdit(Id);
+            btnBusinessUpdate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    upadetBusinessProfile(Id, pk_userid);
+                }
+            });
+        } else {
+            layoutProfileSave.setVisibility(View.GONE);
+
+
+        }
+
+
     }
 }

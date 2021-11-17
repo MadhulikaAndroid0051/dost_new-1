@@ -1226,8 +1226,11 @@ updateEmailIncludeProfile(Id,checkbox);
         });
     }
 
+
+
+
     @Override
-    public void getbusinessId(String Id, String pk_userid) {
+    public void getbusinessId(String Id, String pk_userid, String profileName) {
 
     }
 }

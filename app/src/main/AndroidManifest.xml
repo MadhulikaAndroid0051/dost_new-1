@@ -88,6 +88,7 @@
         <activity android:name=".Activity.TaxInvoiceActivity" />
         <activity android:name=".Activity.ImageProfile" />
         <activity android:name=".Activity.CardActivityAdd" />
+        <activity android:name=".Fragment.NfcSetActionSection.SetActionUpdateProfile"/>
     </application>
 
 </manifest>

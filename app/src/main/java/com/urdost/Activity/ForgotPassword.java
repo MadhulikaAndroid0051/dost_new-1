@@ -31,6 +31,7 @@ public class ForgotPassword extends BaseActivity {
     Button btnSubmit;
     @BindView(R.id.et_mobile)
     EditText etMobile;
+    String referId;
 
     Bundle bundle;
 
@@ -77,6 +78,8 @@ public class ForgotPassword extends BaseActivity {
                     Bundle bundles = new Bundle();
                     bundles.putString("mobile", etMobile.getText().toString());
                     bundles.putString("from", "forgot");
+                    bundle.putString("Id", referId);
+
                     goToActivityWithFinish(context, ActivityOTP.class, bundles);
                 }
                 showMessage(response.body().getMessage());

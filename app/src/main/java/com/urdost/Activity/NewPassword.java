@@ -34,14 +34,18 @@ public class NewPassword extends BaseActivity {
     EditText etNewPassword;
     @BindView(R.id.et_repassword)
     EditText etRepassword;
+    String referId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_new_password);
         ButterKnife.bind(this);
-
+        bundle = new Bundle();
         bundle = getIntent().getBundleExtra(PAYLOAD_BUNDLE);
+        referId=bundle.getString("Id");
+
     }
 
     @OnClick({R.id.img_back, R.id.btn_submit})
@@ -86,7 +90,11 @@ public class NewPassword extends BaseActivity {
                 hideLoading();
                 LoggerUtil.logItem(response.body());
                 if (response.body().getStatusCode().equalsIgnoreCase("200")) {
-                    goToActivityWithFinish(context, LoginActivity.class, null);
+                    Bundle bundle1 = new Bundle();
+
+                    bundle1.putString("Id", referId);
+
+                    goToActivityWithFinish(context, LoginActivity.class, bundle1);
                 }
                 showMessage(response.body().getMessage());
             }
